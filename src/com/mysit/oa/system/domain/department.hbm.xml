@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mysit.oa.system.domain">
+    <class name="com.mysit.oa.system.domain.Department" table="oa_department">
+        <id name="id" column="department_id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="department_name" length="10" not-null="true"/>
+
+        <property name="description" column="department_description" length="50" not-null="true"/>
+
+        <many-to-one name="parent" column="parent_id"/>
+
+        <set name="children" inverse="true" cascade="save-update">
+            <key column="parent_id"/>
+            <one-to-many class="Department"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

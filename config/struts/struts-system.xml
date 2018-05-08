@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="department" extends="base" namespace="/department">
+        <action name="departmentAction_*" class="departmentAction" method="{1}">
+            <result name="list">/WEB-INF/pages/department/{1}.jsp</result>
+
+            <result name="delete" type="redirectAction">
+                <param name="actionName">departmentAction_list</param>
+            </result>
+
+            <result name="editUi">/WEB-INF/pages/department/editUi.jsp</result>
+
+            <result name="update" type="redirectAction">
+                <param name="actionName">departmentAction_list</param>
+            </result>
+        </action>
+    </package>
+</struts>
