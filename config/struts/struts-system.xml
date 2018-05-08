@@ -8,6 +8,12 @@
     <package name="system" extends="base" namespace="/system">
         <action name="departmentAction_*" class="departmentAction" method="{1}">
             <result name="list">/WEB-INF/pages/system/department/list.jsp</result>
+
+            <result name="addUI">/WEB-INF/pages/system/department/addUI.jsp</result>
+
+            <result name="add" type="redirectAction">
+                <param name="actionName">departmentAction_list</param>
+            </result>
         </action>
     </package>
 </struts>

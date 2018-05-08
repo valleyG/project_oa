@@ -18,4 +18,9 @@ public class DepartmentServiceImpl implements DepartmentService {
         List<Department> topDepartment = departmentDao.findAllTopDepartment();
         return topDepartment;
     }
+
+    @Override
+    public void addDepartment(Department department) {
+        departmentDao.save(department);
+    }
 }

@@ -10,4 +10,6 @@ public interface DepartmentService {
      * @return
      */
     List<Department> findAllTopDepartment();
+
+    void addDepartment(Department department);
 }

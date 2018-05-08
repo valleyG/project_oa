@@ -52,7 +52,7 @@
                     <td>${department.parent.name}&nbsp;</td>
                     <td>${department.description}&nbsp;</td>
                     <td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="#">删除</a>
-                        <a href="saveUI.html">修改</a>
+                        <a href="addUI.jsp">修改</a>
                     </td>
                 </tr>
             </c:forEach>
@@ -63,7 +63,7 @@
     <!-- 其他功能超链接 -->
     <div id="TableTail">
         <div id="TableTail_inside">
-            <a href="saveUI.html"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></a>
+            <a href="${pageContext.request.contextPath}/system/departmentAction_addUI?flag=top"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></a>
         </div>
     </div>
 </div>
