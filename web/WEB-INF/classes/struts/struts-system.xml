@@ -5,19 +5,9 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="department" extends="base" namespace="/department">
+    <package name="system" extends="base" namespace="/system">
         <action name="departmentAction_*" class="departmentAction" method="{1}">
-            <result name="list">/WEB-INF/pages/department/{1}.jsp</result>
-
-            <result name="delete" type="redirectAction">
-                <param name="actionName">departmentAction_list</param>
-            </result>
-
-            <result name="editUi">/WEB-INF/pages/department/editUi.jsp</result>
-
-            <result name="update" type="redirectAction">
-                <param name="actionName">departmentAction_list</param>
-            </result>
+            <result name="list">/WEB-INF/pages/system/department/list.jsp</result>
         </action>
     </package>
 </struts>

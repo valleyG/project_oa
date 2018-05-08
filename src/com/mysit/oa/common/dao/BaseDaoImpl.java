@@ -37,13 +37,13 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 
     @Override
     public List<T> findAll() {
-        String hql = "from "+entityClass.getSimpleName();
+        String hql = " from "+entityClass.getSimpleName();
         return (List<T>) this.hibernateTemplate.find(hql, null);
     }
 
     @Override
     public <P> List<T> find(String whereHql, P... params) {
-        StringBuffer hql = new StringBuffer("from " +this.entityClass.getSimpleName()+"o");
+        StringBuffer hql = new StringBuffer(" from " +this.entityClass.getSimpleName()+" o ");
         if (StringUtils.isBlank(whereHql)) {
             hql.append(whereHql);
         }
