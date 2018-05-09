@@ -2,7 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <bean id="departmentService" class="com.mysit.oa.system.service.impl.DepartmentServiceImpl">
         <property name="departmentDao" ref="departmentDao"/>
+    </bean>
+
+
+    <bean id="roleService" class="com.mysit.oa.system.service.impl.RoleServiceImpl">
+        <property name="roleDao" ref="roleDao"/>
     </bean>
 </beans>

@@ -51,21 +51,29 @@
                     <td><a href="_list_level2.html">${department.name}</a>&nbsp;</td>
                     <td>${department.parent.name}&nbsp;</td>
                     <td>${department.description}&nbsp;</td>
-                    <td><a onClick="return window.confirm('这将删除所有的下级部门，您确定要删除吗？')" href="#">删除</a>
+                    <td><a onClick="deleteDepartment(${department.id})" href="#">删除</a>
                         <a href="addUI.jsp">修改</a>
                     </td>
+
+                    <script type="text/javascript">
+                        function deleteDepartment(id) {
+                           if (window.confirm(" 这将删除所有的下级部门，您确定要删除吗？")){
+                               window.location.href="${pageContext.request.contextPath}/system/departmentAction_delete?id="+id;
+                           }
+                        };
+                    </script>
                 </tr>
             </c:forEach>
 
         </tbody>
     </table>
 
-    <!-- 其他功能超链接 -->
-    <div id="TableTail">
-        <div id="TableTail_inside">
-            <a href="${pageContext.request.contextPath}/system/departmentAction_addUI?flag=top"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></a>
-        </div>
+<!-- 其他功能超链接 -->
+<div id="TableTail">
+    <div id="TableTail_inside">
+        <a href="${pageContext.request.contextPath}/system/departmentAction_addUI?flag=top"><img src="${pageContext.request.contextPath}/style/images/createNew.png"/></a>
     </div>
+</div>
 </div>
 
 <!--说明-->

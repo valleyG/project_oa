@@ -1,6 +1,6 @@
 package com.mysit.oa.common.util;
 
-import com.mysit.oa.common.exception.S2shException;
+import com.mysit.oa.common.exception.OAException;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.lang.reflect.ParameterizedType;
@@ -11,10 +11,10 @@ public class GenericUtil {
 
     public static Class getGenericActualTypeParameterBySupperClass(Class clazz, Integer index) {
         if (clazz == null) {
-            throw new S2shException("getGenercActualTypeParamenterBySupperClass的Class参数为空");
+            throw new OAException("getGenercActualTypeParamenterBySupperClass的Class参数为空");
         }
         if (index == null || index < 0) {
-            throw new S2shException("getGenercActualTypeParamenterBySupperClass的index参数为空");
+            throw new OAException("getGenercActualTypeParamenterBySupperClass的index参数为空");
         }
 //        获取这个类的父类类型
         Type genericSuperclass = clazz.getGenericSuperclass();

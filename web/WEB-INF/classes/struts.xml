@@ -16,12 +16,12 @@
     <package name="base" extends="struts-default" namespace="/">
         <!--全局跳转-->
         <global-results>
-            <result name="error">/WEB-INF/pages/common/error.jsp</result>
+            <result name="error">/WEB-INF/pages/Globals/error.jsp</result>
         </global-results>
 
         <!--全局异常-->
         <global-exception-mappings>
-            <exception-mapping exception="com.mysit.oa.common.exception.S2shException" result="error"></exception-mapping>
+            <exception-mapping exception="com.mysit.oa.common.exception.OAException" result="error"></exception-mapping>
         </global-exception-mappings>
     </package>
     

@@ -13,4 +13,6 @@ public class DepartmentDaoImpl extends BaseDaoImpl<Department> implements Depart
         String hql = " where o.parent.id is NULL";
         return this.find(hql, null);
     }
+
+
 }

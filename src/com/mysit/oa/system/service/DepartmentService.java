@@ -12,4 +12,8 @@ public interface DepartmentService {
     List<Department> findAllTopDepartment();
 
     void addDepartment(Department department);
+
+    void deleteDepartmentById(Integer id);
+
+    Department findDepartmentById(Integer id);
 }

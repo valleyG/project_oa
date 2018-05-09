@@ -1,6 +1,7 @@
 package com.mysit.oa.system.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Department implements Serializable {
@@ -19,7 +20,18 @@ public class Department implements Serializable {
     /**
      * @one-to-many
      */
-    private Set<Department> children;
+    private Set<Department> children = new HashSet<>();
+
+
+    private Set<User> users = new HashSet<>();
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 
     public Integer getId() {
         return id;

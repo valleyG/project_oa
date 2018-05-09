@@ -53,4 +53,10 @@ public class DepartmentAction extends BaseAction<Department> {
         this.departmentService.addDepartment(department);
         return "add";
     }
+
+    public String delete() throws Exception {
+        Department department = model;
+        this.departmentService.deleteDepartmentById(department.getId());
+        return "delete";
+    }
 }

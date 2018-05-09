@@ -833,43 +833,248 @@
     <table id="211" parent="8" name="oa_department">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="212" parent="211" name="department_id">
+    <table id="212" parent="8" name="oa_privilege">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="213" parent="8" name="oa_role">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="214" parent="8" name="oa_role_privilege">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="215" parent="8" name="oa_user">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="216" parent="8" name="oa_user_role">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="217" parent="211" name="department_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="213" parent="211" name="department_name">
+    <column id="218" parent="211" name="department_name">
       <Position>2</Position>
       <DataType>varchar(10)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="214" parent="211" name="department_description">
+    <column id="219" parent="211" name="department_description">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="215" parent="211" name="parent_id">
+    <column id="220" parent="211" name="parent_id">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="216" parent="211" name="FK_qdcw4c2soeg8jkbyw2f4ssbm3">
+    <index id="221" parent="211" name="FK_qdcw4c2soeg8jkbyw2f4ssbm3">
       <ColNames>parent_id</ColNames>
     </index>
-    <key id="217" parent="211" name="PRIMARY">
+    <key id="222" parent="211" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>department_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="218" parent="211" name="FK_qdcw4c2soeg8jkbyw2f4ssbm3">
+    <foreign-key id="223" parent="211" name="FK_qdcw4c2soeg8jkbyw2f4ssbm3">
       <ColNames>parent_id</ColNames>
       <RefSchemaName>oa</RefSchemaName>
       <RefTableName>oa_department</RefTableName>
       <RefColNames>department_id</RefColNames>
+    </foreign-key>
+    <column id="224" parent="212" name="privilege_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="225" parent="212" name="privilege_name">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="226" parent="212" name="privilege_description">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="227" parent="212" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>privilege_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="228" parent="213" name="role_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="229" parent="213" name="role_name">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="230" parent="213" name="role_description">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="231" parent="213" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="232" parent="214" name="role_privilege_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="233" parent="214" name="privilege_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="234" parent="214" name="role_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="235" parent="214" name="FK_amf4pt45pmuj8xhs9t82x3eyp">
+      <ColNames>privilege_id</ColNames>
+    </index>
+    <index id="236" parent="214" name="FK_shhs68dsh3yxfmsmh6oo2ay6t">
+      <ColNames>role_id</ColNames>
+    </index>
+    <key id="237" parent="214" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>role_privilege_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="238" parent="214" name="FK_amf4pt45pmuj8xhs9t82x3eyp">
+      <ColNames>privilege_id</ColNames>
+      <RefSchemaName>oa</RefSchemaName>
+      <RefTableName>oa_privilege</RefTableName>
+      <RefColNames>privilege_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="239" parent="214" name="FK_shhs68dsh3yxfmsmh6oo2ay6t">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>oa</RefSchemaName>
+      <RefTableName>oa_role</RefTableName>
+      <RefColNames>role_id</RefColNames>
+    </foreign-key>
+    <column id="240" parent="215" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="215" name="login_Name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="242" parent="215" name="user_name">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="243" parent="215" name="user_gender">
+      <Position>4</Position>
+      <DataType>varchar(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="244" parent="215" name="user_telephone">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="245" parent="215" name="user_email">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="246" parent="215" name="user_remark">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="247" parent="215" name="department_id">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="248" parent="215" name="FK_adevlieviuai0k1lvqsj5y2um">
+      <ColNames>department_id</ColNames>
+    </index>
+    <key id="249" parent="215" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="250" parent="215" name="FK_adevlieviuai0k1lvqsj5y2um">
+      <ColNames>department_id</ColNames>
+      <RefSchemaName>oa</RefSchemaName>
+      <RefTableName>oa_department</RefTableName>
+      <RefColNames>department_id</RefColNames>
+    </foreign-key>
+    <column id="251" parent="216" name="user_role_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="252" parent="216" name="user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="253" parent="216" name="role_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="254" parent="216" name="FK_endwy9uw1m8u7slf0ggss43c9">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="255" parent="216" name="FK_g06ju0x61mp0pl38duvw575s">
+      <ColNames>role_id</ColNames>
+    </index>
+    <key id="256" parent="216" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="257" parent="216" name="FK_endwy9uw1m8u7slf0ggss43c9">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>oa</RefSchemaName>
+      <RefTableName>oa_user</RefTableName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="258" parent="216" name="FK_g06ju0x61mp0pl38duvw575s">
+      <ColNames>role_id</ColNames>
+      <RefSchemaName>oa</RefSchemaName>
+      <RefTableName>oa_role</RefTableName>
+      <RefColNames>role_id</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>

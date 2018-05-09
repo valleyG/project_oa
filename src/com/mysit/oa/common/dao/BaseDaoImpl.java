@@ -44,7 +44,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     @Override
     public <P> List<T> find(String whereHql, P... params) {
         StringBuffer hql = new StringBuffer(" from " +this.entityClass.getSimpleName()+" o ");
-        if (StringUtils.isBlank(whereHql)) {
+        if (!StringUtils.isBlank(whereHql)) {
             hql.append(whereHql);
         }
 

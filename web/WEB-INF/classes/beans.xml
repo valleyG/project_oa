@@ -47,6 +47,11 @@
         <property name="mappingResources">
             <array>
                 <value>com/mysit/oa/system/domain/department.hbm.xml</value>
+                <value>com/mysit/oa/system/domain/user.hbm.xml</value>
+                <value>com/mysit/oa/system/domain/userRole.hbm.xml</value>
+                <value>com/mysit/oa/system/domain/role.hbm.xml</value>
+                <value>com/mysit/oa/system/domain/privilege.hbm.xml</value>
+                <value>com/mysit/oa/system/domain/rolePrivilege.hbm.xml</value>
             </array>
         </property>
     </bean>
@@ -80,4 +85,5 @@
     <import resource="classpath*:spring/applicatContext-action.xml"/>
     <import resource="classpath*:spring/applicationContext-dao.xml"/>
     <import resource="classpath*:spring/applicationContext-service.xml"/>
+    <import resource="classpath*:spring/applicatContext-utils.xml"/>
 </beans>

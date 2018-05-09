@@ -1,9 +1,9 @@
 package com.mysit.oa.common.exception;
 
-public class S2shException extends RuntimeException {
+public class OAException extends RuntimeException {
     private String message;
 
-    public S2shException(String message) {
+    public OAException(String message) {
         super(message);
         this.message = message;
     }
