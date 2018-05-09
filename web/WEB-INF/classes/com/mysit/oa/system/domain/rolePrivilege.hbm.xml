@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mysit.oa.system.domain">
+    <class name="com.mysit.oa.system.domain.PrivilegeRole" table="oa_role_privilege">
+        <id name="id" column="role_privilege_id">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="privilege" column="privilege_id"/>
+        <many-to-one name="role" column="role_id"/>
+
+    </class>
+</hibernate-mapping>

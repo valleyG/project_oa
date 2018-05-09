@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.mysit.oa.system.domain">
+    <class name="com.mysit.oa.system.domain.Privilege" table="oa_privilege">
+        <id name="id" column="privilege_id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="privilege_name" length="10" not-null="true"/>
+
+        <property name="description" column="privilege_description" length="50" not-null="true"/>
+
+    </class>
+</hibernate-mapping>

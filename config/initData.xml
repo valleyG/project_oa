@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<inite-data>
+    <roles>
+        <role>
+            <name>档案管理员</name>
+            <description>档案管理员</description>
+        </role>
+
+        <role>
+            <name>系统管理员</name>
+            <description>系统管理员</description>
+        </role>
+
+        <role>
+            <name>部门经理</name>
+            <description>部门经理</description>
+        </role>
+
+        <role>
+            <name>财务经理</name>
+            <description>财务经理</description>
+        </role>
+
+        <role>
+            <name>副总经理</name>
+            <description>副总经理</description>
+        </role>
+        <role>
+            <name>总经理</name>
+            <description>总经理</description>
+        </role>
+    </roles>
+</inite-data>
