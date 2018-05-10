@@ -3,6 +3,7 @@ package com.mysit.oa.system.dao.impl;
 import com.mysit.oa.common.dao.BaseDaoImpl;
 import com.mysit.oa.system.dao.DepartmentDao;
 import com.mysit.oa.system.domain.Department;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

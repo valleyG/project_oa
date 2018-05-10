@@ -9,11 +9,20 @@ public class User implements Serializable {
     private static final long serialVersionUID = 406797914132036405L;
     private Integer id;
     private String loginName;
+    private String password;
     private String name;
     private String gender;
     private String telephone;
     private String email;
     private String remark;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     private Department department;
 

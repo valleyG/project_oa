@@ -8,6 +8,7 @@ import org.dom4j.Element;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.List;
 import java.util.Properties;
@@ -57,7 +58,7 @@ public class InitDataUtils {
             properties.setProperty("flag", "true");
 
             URL flagUrl = InitDataUtils.class.getClassLoader().getResource("init-flag.properties");
-            String path = URLEncoder.encode(flagUrl.getPath(), "utf-8");
+            String path = URLDecoder.decode(flagUrl.getPath(), "utf-8");
             properties.store(new FileOutputStream(path), "修改安装状态");
         }catch (Exception e){
             e.printStackTrace();

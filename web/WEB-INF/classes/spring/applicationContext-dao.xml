@@ -11,4 +11,13 @@
     <bean id="roleDao" class="com.mysit.oa.system.dao.impl.RoleDaoImpl">
         <property name="hibernateTemplate" ref="hibernateTemplate"/>
     </bean>
+
+    <bean id="userDao" class="com.mysit.oa.system.dao.impl.UserDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="userRoleDao" class="com.mysit.oa.system.dao.impl.UserRoleDaoImpl">
+        <property name="hibernateTemplate" ref="hibernateTemplate"/>
+    </bean>
+
 </beans>

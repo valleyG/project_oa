@@ -30,4 +30,10 @@
             <description>总经理</description>
         </role>
     </roles>
+
+    <privileges>
+        <privilege>
+
+        </privilege>
+    </privileges>
 </inite-data>

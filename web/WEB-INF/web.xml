@@ -35,9 +35,6 @@
     </listener>
 
     <!--服务器数据初始化-->
-    <listener>
-        <listener-class>com.mysit.oa.system.web.listener.initDataListener</listener-class>
-    </listener>
 
     <context-param>
         <param-name>contextConfigLocation</param-name>

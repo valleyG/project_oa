@@ -8,4 +8,11 @@
     <bean id="departmentAction" class="com.mysit.oa.system.web.action.DepartmentAction" scope="prototype">
         <property name="departmentService" ref="departmentService"/>
     </bean>
+
+    <bean id="userAction" class="com.mysit.oa.system.web.action.UserAction" scope="prototype">
+        <property name="userService" ref="userService"/>
+        <property name="roleService" ref="roleService"/>
+        <property name="departmentService" ref="departmentService"/>
+        <property name="userRoleService" ref="userRoleService"/>
+    </bean>
 </beans>

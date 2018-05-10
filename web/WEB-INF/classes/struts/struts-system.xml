@@ -19,5 +19,15 @@
                 <param name="actionName">departmentAction_list</param>
             </result>
         </action>
+
+
+        <action name="userAction_*" method="{1}" class="com.mysit.oa.system.web.action.UserAction">
+
+            <result name="list">/WEB-INF/pages/system/user/list.jsp</result>
+            <result name="addUI">/WEB-INF/pages/system/user/addUI.jsp</result>
+            <result name="add" type="redirectAction">
+                <param name="actionName">userAction_list</param>
+            </result>
+        </action>
     </package>
 </struts>

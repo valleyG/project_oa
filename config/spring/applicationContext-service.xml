@@ -11,4 +11,12 @@
     <bean id="roleService" class="com.mysit.oa.system.service.impl.RoleServiceImpl">
         <property name="roleDao" ref="roleDao"/>
     </bean>
+
+    <bean id="userService" class="com.mysit.oa.system.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <bean id="userRoleService" class="com.mysit.oa.system.service.impl.UserRoleServiceImpl">
+        <property name="userRoleDao" ref="userRoleDao"/>
+    </bean>
 </beans>

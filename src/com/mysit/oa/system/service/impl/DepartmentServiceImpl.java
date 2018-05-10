@@ -4,7 +4,9 @@ import com.mysit.oa.common.exception.OAException;
 import com.mysit.oa.system.dao.DepartmentDao;
 import com.mysit.oa.system.domain.Department;
 import com.mysit.oa.system.service.DepartmentService;
+import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentServiceImpl implements DepartmentService {
@@ -48,5 +50,35 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         return this.departmentDao.findById(id);
 
+    }
+
+    @Override
+    public List<Department> findDepartmentTree(List<Department> allTopDepartment) {
+        List<Department> departmentTree = new ArrayList<>();
+        departmentTree = recursionGenerateDepartmentTree(allTopDepartment,departmentTree,"|---");
+        return departmentTree;
+    }
+
+
+    /**
+     * 递归生成部门事树
+     * @param allTopDepartment
+     * @param departmentTree
+     * @param prefix
+     * @return
+     */
+    private List<Department> recursionGenerateDepartmentTree(List<Department> allTopDepartment, List<Department> departmentTree, String prefix) {
+        for (Department department : allTopDepartment) {
+            Department newDepartment = new Department();
+            newDepartment.setId(department.getId());
+            newDepartment.setName(prefix+department.getName());
+            newDepartment.setDescription(department.getDescription());
+            departmentTree.add(newDepartment);
+            if (!CollectionUtils.isEmpty(department.getChildren())){
+                recursionGenerateDepartmentTree(new ArrayList<>(department.getChildren()), departmentTree, "--"+prefix);
+            }
+        }
+
+        return departmentTree;
     }
 }

@@ -1,4 +1,4 @@
-package com.mysit.oa.system.web.listener;
+package com.mysit.oa.common.web.listener;
 
 import com.mysit.oa.common.util.InitDataUtils;
 
@@ -16,6 +16,7 @@ public class initDataListener implements ServletContextListener{
             //修改初始化状态信息
             InitDataUtils.modifyInitFlag();
         }
+
     }
 
     @Override

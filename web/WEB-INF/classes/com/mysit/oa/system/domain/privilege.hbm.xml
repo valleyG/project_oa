@@ -9,8 +9,16 @@
         </id>
 
         <property name="name" column="privilege_name" length="10" not-null="true"/>
+        <property name="url" column="privilege_url" length="50" not-null="true"/>
+        <property name="level" column="privilege_level" length="3" not-null="true"/>
+        <property name="isLeaf" column="privilege_is_leaf" length="2" not-null="true"/>
+        <property name="isModule" column="privilege_is_module" length="2" not-null="true"/>
 
-        <property name="description" column="privilege_description" length="50" not-null="true"/>
+        <many-to-one name="parent" column="parent_id"/>
 
+        <set name="children" inverse="true" cascade="save-update">
+            <key column="parent_id"/>
+            <one-to-many class="Privilege"/>
+        </set>
     </class>
 </hibernate-mapping>
